@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.1
+
+* Fixed issue where `OnMapReadyListener` would not be invoked during the initial load on iOS.
+
 ## 2.1.0
 
 * Updated Mapsindoors SDKs
