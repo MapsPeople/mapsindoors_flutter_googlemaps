@@ -1,10 +1,10 @@
+# ReadMe
+
 A federated Flutter plugin for integrating with the native MapsIndoors SDK.
 
 | Platform     | Android | iOS   |
 | ------------ | ------- | ----- |
 | **Supports** | SDK 21+ | 13.0+ |
-
-# ReadMe
 
 ## Features
 
@@ -21,7 +21,7 @@ This plugin is based on the MapsIndoors V4 SDK for Android and iOS.
 Add MapsIndoors to your `pubspec.yaml`.
 ​
 ```yaml
-mapsindoors_googlemaps: ^2.1.1
+mapsindoors_googlemaps: ^2.1.3
 ```
 
 ### Android
