@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.1.3
+
+* Fixed issue with `MapsIndoorsWidget.readyListener` not being called on very initial load of MapsIndoors.
+
+## 2.1.2
+
+* Updated Mapsindoors SDKs
+  * Android to 4.2.12
+  * iOS to 4.2.14
+
 ## 2.1.1
 
 * Fixed issue where `OnMapReadyListener` would not be invoked during the initial load on iOS.

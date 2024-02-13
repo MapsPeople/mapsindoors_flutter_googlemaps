@@ -1,0 +1,57 @@
+PODS:
+  - Flutter (1.0.0)
+  - GoogleMaps (7.4.0):
+    - GoogleMaps/Maps (= 7.4.0)
+  - GoogleMaps/Base (7.4.0)
+  - GoogleMaps/Maps (7.4.0):
+    - GoogleMaps/Base
+  - integration_test (0.0.1):
+    - Flutter
+  - MapsIndoors (4.2.14)
+  - mapsindoors_googlemaps_ios (4.2.14):
+    - Flutter
+    - MapsIndoorsCodable (= 4.2.14)
+    - MapsIndoorsGoogleMaps (= 4.2.14)
+  - MapsIndoorsCodable (4.2.14):
+    - MapsIndoors (= 4.2.14)
+    - MapsIndoorsCore (= 4.2.14)
+  - MapsIndoorsCore (4.2.14):
+    - MapsIndoors (= 4.2.14)
+  - MapsIndoorsGoogleMaps (4.2.14):
+    - GoogleMaps (= 7.4.0)
+    - MapsIndoorsCore (= 4.2.14)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+  - mapsindoors_googlemaps_ios (from `.symlinks/plugins/mapsindoors_googlemaps_ios/ios`)
+
+SPEC REPOS:
+  trunk:
+    - GoogleMaps
+    - MapsIndoors
+    - MapsIndoorsCodable
+    - MapsIndoorsCore
+    - MapsIndoorsGoogleMaps
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+  mapsindoors_googlemaps_ios:
+    :path: ".symlinks/plugins/mapsindoors_googlemaps_ios/ios"
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  GoogleMaps: 032f676450ba0779bd8ce16840690915f84e57ac
+  integration_test: 13825b8a9334a850581300559b8839134b124670
+  MapsIndoors: 8afc1d59eaeb8a38d736b92055fdfd9f446df73c
+  mapsindoors_googlemaps_ios: 4b98146b7f0021f461eba9bb41c37ae725b4a524
+  MapsIndoorsCodable: efe85c02404326fa79c54249becbc6c1ffc0f6b1
+  MapsIndoorsCore: 953d05c434d759e4a64ebdf00982612b1fe38596
+  MapsIndoorsGoogleMaps: 196da516e1146c845d91c502eba88b3e0e737717
+
+PODFILE CHECKSUM: 209ba4354751c0eef9328209d91014d33cc744ce
+
+COCOAPODS: 1.14.3
