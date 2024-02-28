@@ -47,7 +47,5 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
-	<key>GoogleMapsAPIKey</key>
-	<string>AIzaSyCxPSR9JpeRCzcWs-gq19kaYPNVy_DphOA</string>
 </dict>
 </plist>

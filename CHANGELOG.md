@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.4
+
+* Fixed issue with not being able to always get a correct route involving one way paths.
+
 ## 2.1.3
 
 * Fixed issue with `MapsIndoorsWidget.readyListener` not being called on very initial load of MapsIndoors.
