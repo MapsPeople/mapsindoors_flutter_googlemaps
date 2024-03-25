@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.5
+
+* Updated Mapsindoors SDKs
+  * Android to 4.4.1
+  * iOS to 4.3.8
+
 ## 2.1.4
 
 * Fixed issue with not being able to always get a correct route involving one way paths.
