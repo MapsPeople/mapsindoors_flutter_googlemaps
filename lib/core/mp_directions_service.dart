@@ -1,10 +1,10 @@
-part of mapsindoors;
+part of '../mapsindoors.dart';
 
 class MPDirectionsService {
-  static final String travelModeTransit = "transit";
-  static final String travelModeDriving = "driving";
-  static final String travelModeWalking = "walking";
-  static final String travelModeBicycling = "bicycling";
+  static const String travelModeTransit = "transit";
+  static const String travelModeDriving = "driving";
+  static const String travelModeWalking = "walking";
+  static const String travelModeBicycling = "bicycling";
 
   /// Creates a [MPDirectionsService] object than can be queried for directions between different [MPPoint]s
   MPDirectionsService() {

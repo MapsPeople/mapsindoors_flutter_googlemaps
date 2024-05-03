@@ -1,42 +1,42 @@
-part of mapsindoors;
+part of '../mapsindoors.dart';
 
 class MPDefaultFloorSelector extends StatefulWidget with MPFloorSelector {
   MPDefaultFloorSelector({super.key});
-  final _Forwarder callForwarder = _Forwarder();
+  final _Forwarder _callForwarder = _Forwarder();
 
   @override
   Widget? getWidget() => this;
   @override
   bool get isAutoFloorChangeEnabled => true;
   @override
-  set floors(List<MPFloor>? floors) => callForwarder.setFloors?.call(floors);
+  set floors(List<MPFloor>? floors) => _callForwarder.setFloors?.call(floors);
   @override
   set onFloorSelectionChangedListener(
       OnFloorSelectionChangedListener listener) {
-    if (callForwarder.setOnFloorSelectionChangedListener != null) {
-      callForwarder.setOnFloorSelectionChangedListener?.call(listener);
+    if (_callForwarder.setOnFloorSelectionChangedListener != null) {
+      _callForwarder.setOnFloorSelectionChangedListener?.call(listener);
     } else {
-      callForwarder.listener = listener;
+      _callForwarder.listener = listener;
     }
   }
 
   @override
   void setSelectedFloor(MPFloor floor) =>
-      callForwarder.setSelectedFloor?.call(floor);
+      _callForwarder.setSelectedFloor?.call(floor);
   @override
   void setSelectedFloorByFloorIndex(int floorIndex) =>
-      callForwarder.setSelectedFloorByFloorIndex?.call(floorIndex);
+      _callForwarder.setSelectedFloorByFloorIndex?.call(floorIndex);
   @override
   set userPositionFloor(int floorIndex) =>
-      callForwarder.setUserPositionFloor?.call(floorIndex);
+      _callForwarder.setUserPositionFloor?.call(floorIndex);
   @override
-  void show(bool show) => callForwarder.show?.call(show);
+  void show(bool show) => _callForwarder.show?.call(show);
   @override
   void zoomLevelChanged(num newZoomLevel) =>
-      callForwarder.zoomLevelChanged?.call(newZoomLevel);
+      _callForwarder.zoomLevelChanged?.call(newZoomLevel);
 
   @override
-  _FloorSelectorState createState() => _FloorSelectorState();
+  FloorSelectorState createState() => FloorSelectorState();
 }
 
 class _Forwarder {
@@ -51,7 +51,7 @@ class _Forwarder {
   Function(num newZoomLevel)? zoomLevelChanged;
 }
 
-class _FloorSelectorState extends State<MPDefaultFloorSelector>
+class FloorSelectorState extends State<MPDefaultFloorSelector>
     implements MPFloorSelectorInterface {
   final List<MPFloor> _floors = List.empty(growable: true);
   OnFloorSelectionChangedListener? _listener;
@@ -63,19 +63,19 @@ class _FloorSelectorState extends State<MPDefaultFloorSelector>
   @override
   void initState() {
     super.initState();
-    widget.callForwarder.setFloors = (floors) => this.floors = floors;
-    widget.callForwarder.setOnFloorSelectionChangedListener =
-        (listener) => this.onFloorSelectionChangedListener = listener;
-    widget.callForwarder.setSelectedFloor = (floor) => setSelectedFloor(floor);
-    widget.callForwarder.setSelectedFloorByFloorIndex =
+    widget._callForwarder.setFloors = (floors) => this.floors = floors;
+    widget._callForwarder.setOnFloorSelectionChangedListener =
+        (listener) => onFloorSelectionChangedListener = listener;
+    widget._callForwarder.setSelectedFloor = (floor) => setSelectedFloor(floor);
+    widget._callForwarder.setSelectedFloorByFloorIndex =
         (floorIndex) => setSelectedFloorByFloorIndex(floorIndex);
-    widget.callForwarder.setUserPositionFloor =
+    widget._callForwarder.setUserPositionFloor =
         (floorIndex) => userPositionFloor = floorIndex;
-    widget.callForwarder.show = (show) => this.show(show);
-    widget.callForwarder.zoomLevelChanged =
+    widget._callForwarder.show = (show) => this.show(show);
+    widget._callForwarder.zoomLevelChanged =
         (newZoomLevel) => zoomLevelChanged(newZoomLevel);
-    if (widget.callForwarder.listener != null) {
-      this.onFloorSelectionChangedListener = widget.callForwarder.listener!;
+    if (widget._callForwarder.listener != null) {
+      onFloorSelectionChangedListener = widget._callForwarder.listener!;
     }
   }
 

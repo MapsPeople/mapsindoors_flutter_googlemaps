@@ -1,4 +1,4 @@
-part of mapsindoors;
+part of '../mapsindoors.dart';
 
 /// gets the platform name and build version
 Future<String?> getPlatformVersion() =>
