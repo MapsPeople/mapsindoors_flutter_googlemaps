@@ -1,4 +1,4 @@
-part of mapsindoors;
+part of '../mapsindoors.dart';
 
 /// A [UniqueWidget] that contains the map used by MapsIndoors
 class MapsIndoorsWidget extends UniqueWidget {
@@ -31,10 +31,9 @@ class MapsIndoorsWidget extends UniqueWidget {
     this.floorSelectorAlignment,
     this.readyListener,
     this.useDefaultMapsIndoorsStyle = true,
-  }) : super(key: new GlobalObjectKey(MapsIndoorsWidget)) {
-    if (this.readyListener != null) {
-      MapcontrolPlatform.instance
-          .setOnMapControlReadyListener(this.readyListener!);
+  }) : super(key: const GlobalObjectKey(MapsIndoorsWidget)) {
+    if (readyListener != null) {
+      MapcontrolPlatform.instance.setOnMapControlReadyListener(readyListener!);
     }
   }
 
@@ -344,7 +343,7 @@ class _MapsIndoorsState extends State<MapsIndoorsWidget> {
 
     final floorSelector = widget.floorSelector ?? MPDefaultFloorSelector();
     MapcontrolPlatform.instance.setFloorSelector(floorSelector, true);
-    final ret;
+    final StatefulWidget ret;
 
     if (Platform.isAndroid) {
       ret = AndroidView(

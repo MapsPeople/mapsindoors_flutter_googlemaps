@@ -1,4 +1,4 @@
-part of mapsindoors;
+part of '../mapsindoors.dart';
 
 class MPDirectionsRenderer {
   /// Set a route to be rendered. This also resets the selected leg and step indices to 0.

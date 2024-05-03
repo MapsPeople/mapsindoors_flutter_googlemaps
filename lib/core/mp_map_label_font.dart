@@ -1,4 +1,4 @@
-part of mapsindoors;
+part of '../mapsindoors.dart';
 
 class MPMapLabelFont {
   final String typeface;

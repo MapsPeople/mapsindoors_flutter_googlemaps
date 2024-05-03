@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.6
+
+* Updated to Mapsindoors iOS SDK 4.3.11 with proper Privacy Manifests
+
 ## 2.1.5
 
 * Updated Mapsindoors SDKs
