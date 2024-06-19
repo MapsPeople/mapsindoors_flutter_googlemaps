@@ -1,7 +1,7 @@
 part of '../mapsindoors.dart';
 
-/// A [UniqueWidget] that contains the map used by MapsIndoors
-class MapsIndoorsWidget extends UniqueWidget {
+/// A singleton widget that contains the map used by MapsIndoors
+class MapsIndoorsWidget extends StatefulWidget {
   final MPFloorSelector? floorSelector;
   final MPMapLabelFont? mapLabelFont;
   final int? textSize;
