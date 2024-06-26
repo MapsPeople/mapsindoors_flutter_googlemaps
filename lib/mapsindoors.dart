@@ -17,6 +17,7 @@ export 'package:mapsindoors_platform_interface/platform_library.dart'
         MPLocation,
         MPVenue,
         LiveDataDomainTypes,
+        MPFeatureType,
         MPCameraEvent,
         MPCameraViewFitMode,
         MPCollisionHandling,
@@ -50,6 +51,7 @@ export 'package:mapsindoors_platform_interface/platform_library.dart'
         MPCategory,
         MPDataField,
         MPDisplayRule,
+        MPLabelGraphic,
         MPError,
         MPFilter,
         MPFilterBuilder,
@@ -60,6 +62,7 @@ export 'package:mapsindoors_platform_interface/platform_library.dart'
         MPFilterBehaviorBuilder,
         MPSelectionBehavior,
         MPSelectionBehaviorBuilder,
+        MPSelectionMode,
         MPRouteResult,
         MPMapStyle,
         MPPositionProviderInterface,
@@ -77,7 +80,14 @@ export 'package:mapsindoors_platform_interface/platform_library.dart'
         MPBuildingCollection,
         MPCategoryCollection,
         MPVenueCollection,
-        MPUserRoleCollection;
+        MPUserRoleCollection,
+        MPLabelType,
+        MPHighlightBehavior,
+        MPHighlightBehaviorBuilder,
+        MPIconPlacement,
+        MPBadgePosition,
+        MPRouteStopIconConfig,
+        MPRouteStopIconConfigInterface;
 
 part 'core/mapsindoors_widget.dart';
 part 'core/mp_directions_service.dart';

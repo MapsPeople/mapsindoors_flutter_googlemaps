@@ -15,15 +15,34 @@ class MPDirectionsService {
     DirectionsServicePlatform.instance.create();
   }
 
-  /// Add an avoidWayType, these are based on [OSM highways](https://wiki.openstreetmap.org/wiki/Key:highway)
+  /// Add an avoided WayType, these are based on [OSM highways](https://wiki.openstreetmap.org/wiki/Key:highway)
+  ///
+  /// Avoided WayTypes are downprioritized, but if no path is available that does not utilize them, then they will be used in the route.
   ///
   /// Supported types are defined in [MPHighway]
   Future<void> addAvoidWayType(String avoidWayType) =>
       DirectionsServicePlatform.instance.addAvoidWayType(avoidWayType);
 
+  /// Add an excluded WayType, these are based on [OSM highways](https://wiki.openstreetmap.org/wiki/Key:highway)
+  ///
+  /// Excluded WayTypes are completely excluded, if no path is available that does not utilize them, then no route will be found.
+  ///
+  /// Supported types are defined in [MPHighway]
+  Future<void> addExcludeWayType(String avoidWayType) =>
+      DirectionsServicePlatform.instance.addExcludeWayType(avoidWayType);
+
   /// Clears all added avoidWayTypes
+  @Deprecated("Deprecated since 4.3.0. Use clearAvoidWayType() instead")
   Future<void> clearWayType() =>
-      DirectionsServicePlatform.instance.clearWayType();
+      DirectionsServicePlatform.instance.clearAvoidWayType();
+
+  /// Clears all added avoidWayTypes
+  Future<void> clearAvoidWayType() =>
+      DirectionsServicePlatform.instance.clearAvoidWayType();
+
+  /// Clears all added excludeWayTypes
+  Future<void> clearExcludeWayType() =>
+      DirectionsServicePlatform.instance.clearExcludeWayType();
 
   /// Sets whether routes should use departure time or arrival time when using the transit travel mode
   Future<void> setIsDeparture(bool isDeparture) =>
@@ -31,10 +50,36 @@ class MPDirectionsService {
 
   /// Queries the routing network to generate a route from the [origin] to the [destination].
   ///
+  /// Can be supplied with a list of [stops] to visit on the way, and whether to [optimize] the order of the stops.
+  ///
   /// Can throw an [MPError] if unable to generate the route.
   Future<MPRoute> getRoute(
-          {required MPPoint origin, required MPPoint destination}) =>
-      DirectionsServicePlatform.instance.getRoute(origin, destination);
+      {required MPPoint origin,
+      required MPPoint destination,
+      List<MPPoint>? stops,
+      bool? optimize = false}) {
+    return DirectionsServicePlatform.instance.getRoute(
+        MPPoint.withCoordinates(
+            longitude: origin.longitude,
+            latitude: origin.latitude,
+            floorIndex: origin.floorIndex != MPPoint.noFloorIndex
+                ? origin.floorIndex
+                : 0),
+        MPPoint.withCoordinates(
+            longitude: destination.longitude,
+            latitude: destination.latitude,
+            floorIndex: destination.floorIndex != MPPoint.noFloorIndex
+                ? destination.floorIndex
+                : 0),
+        stops
+            ?.map((it) => MPPoint.withCoordinates(
+                longitude: it.longitude,
+                latitude: it.latitude,
+                floorIndex:
+                    it.floorIndex != MPPoint.noFloorIndex ? it.floorIndex : 0))
+            .toList(),
+        optimize);
+  }
 
   /// defines the travel mode for routes, can be one of the following:
   ///

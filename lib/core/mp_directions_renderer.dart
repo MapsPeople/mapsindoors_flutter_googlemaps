@@ -2,8 +2,15 @@ part of '../mapsindoors.dart';
 
 class MPDirectionsRenderer {
   /// Set a route to be rendered. This also resets the selected leg and step indices to 0.
-  Future<void> setRoute(MPRoute? route) =>
-      DirectionsRendererPlatform.instance.setRoute(route);
+  Future<void> setRoute(MPRoute? route,
+      {Map<num, MPRouteStopIconConfigInterface>? stopIcons}) {
+    return DirectionsRendererPlatform.instance.setRoute(route, stopIcons);
+  }
+
+  /// Change the default route stop icon.
+  Future<void> setDefaultRouteStopIcon(MPRouteStopIconConfigInterface icon) {
+    return DirectionsRendererPlatform.instance.setDefaultRouteStopIcon(icon);
+  }
 
   /// Clears the route from the map
   Future<void> clear() => DirectionsRendererPlatform.instance.clear();

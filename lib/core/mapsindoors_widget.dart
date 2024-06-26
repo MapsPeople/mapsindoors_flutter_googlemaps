@@ -9,6 +9,9 @@ class MapsIndoorsWidget extends UniqueWidget {
   final bool? showInfoWindowOnClick;
   final bool? showUserPosition;
   final bool? enabletileFadeIn;
+  final MPSelectionMode? buildingSelectionMode;
+  final MPSelectionMode? floorSelectionMode;
+  final num? mapsIndoorsTransitionLevel;
   final Alignment? floorSelectorAlignment;
   final bool useDefaultMapsIndoorsStyle;
   final OnMapReadyListener? readyListener;
@@ -27,6 +30,9 @@ class MapsIndoorsWidget extends UniqueWidget {
     this.showInfoWindowOnClick,
     this.showUserPosition,
     this.enabletileFadeIn,
+    this.buildingSelectionMode,
+    this.floorSelectionMode,
+    this.mapsIndoorsTransitionLevel,
     this.floorSelector,
     this.floorSelectorAlignment,
     this.readyListener,
@@ -46,7 +52,7 @@ class MapsIndoorsWidget extends UniqueWidget {
   }
 
   /// Select a venue, optionally move the camera to the given venue
-  Future<void> selectVenue(FutureOr<MPVenue> venue, bool moveCamera) async {
+  Future<void> selectVenue(FutureOr<MPVenue?> venue, bool moveCamera) async {
     return MapcontrolPlatform.instance.selectVenue(await venue, moveCamera);
   }
 
@@ -57,7 +63,7 @@ class MapsIndoorsWidget extends UniqueWidget {
 
   /// Select a building, optionally move the camera to the given building
   Future<void> selectBuilding(
-      FutureOr<MPBuilding> building, bool moveCamera) async {
+      FutureOr<MPBuilding?> building, bool moveCamera) async {
     return MapcontrolPlatform.instance
         .selectBuilding(await building, moveCamera);
   }
@@ -228,6 +234,38 @@ class MapsIndoorsWidget extends UniqueWidget {
     return MapcontrolPlatform.instance.disableLiveData(donaminType);
   }
 
+  /// Removes highlight status from all highlighted locations
+  Future<void> clearHighlight() {
+    return MapcontrolPlatform.instance.clearHighlight();
+  }
+
+  /// Set a collection of locations to be highlighted, this is different from [setFilter] in that other locations are not removed,
+  /// but the highlighted locations will always be visible and will have a badge added to show that it is highlighted.
+  Future<void> setHighlight(
+      List<MPLocation> locations, MPHighlightBehavior behavior) {
+    return MapcontrolPlatform.instance.setHighlight(locations, behavior);
+  }
+
+  /// Get the current building selection mode
+  Future<MPSelectionMode> getBuildingSelectionMode() {
+    return MapcontrolPlatform.instance.getBuildingSelectionMode();
+  }
+
+  /// Set the building selection mode
+  Future<void> setBuildingSelectionMode(MPSelectionMode mode) {
+    return MapcontrolPlatform.instance.setBuildingSelectionMode(mode);
+  }
+
+  /// Get the current floor selection mode
+  Future<MPSelectionMode> getFloorSelectionMode() {
+    return MapcontrolPlatform.instance.getFloorSelectionMode();
+  }
+
+  /// Set the floor selection mode
+  Future<void> setFloorSelectionMode(MPSelectionMode mode) {
+    return MapcontrolPlatform.instance.setFloorSelectionMode(mode);
+  }
+
   /// Add a camera event listener, invoked when a camera event occurs (e.g. moved, idle) (see [MPCameraEvent])
   void addOnCameraEventListner(MPCameraEventListener listener) {
     MapcontrolPlatform.instance.addOnCameraEventListner(listener);
@@ -316,6 +354,23 @@ class MapsIndoorsWidget extends UniqueWidget {
     return MapcontrolPlatform.instance
         .setLabelOptions(textSize, color, showHalo);
   }
+
+  /// Set a list of features to be hidden from the map.
+  ///
+  /// [features] the features to be hidden
+  ///
+  /// Setting a new list will override any existing list.
+  /// Setting null will make all features visible.
+  Future<void> setHiddenFeatures(FutureOr<List<MPFeatureType>> features) async {
+    return MapcontrolPlatform.instance.setHiddenFeatures(await features);
+  }
+
+  /// Get the list of features hidden on the map
+  ///
+  /// If null is returned, then no features are currently hidden
+  Future<List<MPFeatureType>> getHiddenFeatures() {
+    return MapcontrolPlatform.instance.getHiddenFeatures();
+  }
 }
 
 class _MapsIndoorsState extends State<MapsIndoorsWidget> {
@@ -334,8 +389,11 @@ class _MapsIndoorsState extends State<MapsIndoorsWidget> {
         "typeface": widget.mapLabelFont?.typeface,
         "color": widget.mapLabelFont?.color,
         "showHalo": widget.mapLabelFont?.showHalo,
+        "buildingSelectionMode": widget.buildingSelectionMode?.index,
+        "floorSelectionMode": widget.floorSelectionMode?.index,
         "tileFadeInEnabled": widget.enabletileFadeIn,
-        "useDefaultMapsIndoorsStyle": widget.useDefaultMapsIndoorsStyle
+        "mapsindoorsTransitionLevel": widget.mapsIndoorsTransitionLevel,
+        "useDefaultMapsIndoorsStyle": widget.useDefaultMapsIndoorsStyle,
       }),
       "floorSelectorAutoFloorChange":
           widget.floorSelector?.isAutoFloorChangeEnabled == true

@@ -180,5 +180,5 @@ class FloorSelectorState extends State<MPDefaultFloorSelector>
 
 ButtonStyle _buttonStyleWithColor(Color color) {
   return ButtonStyle(
-      backgroundColor: MaterialStateProperty.resolveWith((states) => color));
+      backgroundColor: WidgetStateProperty.resolveWith((states) => color));
 }

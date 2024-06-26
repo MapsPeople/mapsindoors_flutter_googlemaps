@@ -10,6 +10,28 @@ Future<String?> getPlatformVersion() =>
 Future<MPError?> loadMapsIndoors(String key) =>
     MapsindoorsPlatform.instance.load(key);
 
+/// Loads content from the MapsIndoors solution matching the given API [key].
+///
+/// Loads a subset of [MPVenue]s defined in the [venueIds] parameter.
+///
+/// Throws an [MPError] if loading fails.
+Future<void> loadMapsIndoorsWithVenues(String key, List<String> venueIds) =>
+    MapsindoorsPlatform.instance.loadWithVenues(key, venueIds);
+
+/// Adds a collection of venues to be synchronized. All non-synchronized venues will be unloaded.
+///
+/// This will irreversably change the current loaded SDK to venue-sync mode.
+Future<void> addVenuesToSync(List<String> venueIds) =>
+    MapsindoorsPlatform.instance.addVenuesToSync(venueIds);
+
+/// Removes a collection of venues from active synchronization.
+Future<void> removeVenuesToSync(List<String> venueIds) =>
+    MapsindoorsPlatform.instance.removeVenuesToSync(venueIds);
+
+/// Fetches all actively synchronized venues.
+Future<List<String>> getSyncedVenues() =>
+    MapsindoorsPlatform.instance.getSyncedVenues();
+
 /// Retrieve the default display rule (hardcoded display rule in the SDK).
 ///
 /// Requires that [loadMapsIndoors] has successfully executed.
@@ -61,9 +83,17 @@ Future<MPDisplayRule?> getSolutionDisplayRule(
 void addOnMapsIndoorsReadyListener(OnMapsIndoorsReadyListener listener) =>
     MapsindoorsPlatform.instance.addOnMapsIndoorsReadyListener(listener);
 
-/// Remove a MapsIndoors ready listener
+/// Remove a MapsIndoors ready [listener]
 void removeOnMapsIndoorsReadyListener(OnMapsIndoorsReadyListener listener) =>
     MapsindoorsPlatform.instance.removeOnMapsIndoorsReadyListener(listener);
+
+/// Add a [listener] that is invoked when the loading status changes for a venue.
+void addOnVenueStatusChangedListener(MPVenueStatusListener listener) =>
+    MapsindoorsPlatform.instance.addOnVenueStatusChangedListener(listener);
+
+/// Remove a venue status [listener]
+void removeOnVenueStatusChangedListener(MPVenueStatusListener listener) =>
+    MapsindoorsPlatform.instance.removeOnVenueStatusChangedListener(listener);
 
 /// Checks if there is on device data (embedded/locally stored) available. For this to return true,
 /// data has to be available for all solution data types ([MPLocation], [MPBuilding]...)

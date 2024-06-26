@@ -1,5 +1,61 @@
 # Changelog
 
+## 3.0.0
+
+### Added
+
+* Added `setHighlight` and `clearHighlight` to `MapControlWidget` which allows you to highlight a list of locations
+* Added new `MPCameraViewFitMode`: `none`, which will disable automatic camera movement when changing legs
+* Added `addExcludeWayType`, `clearExcludeWayType` to `MPDirectionsService` to allow the user to exclude specific `MPHighway`s when querying for a route.
+* Added two new `MPSolutionDisplayRuleEnum`s `selection` and `highlight` that allows you to modify the look of highlighted and selected Locations.
+* Added new setters and getters to `MPDisplayRule`:
+  * `LabelType`
+  * `IconScale`
+  * `IconPlacement`
+  * `PolygonLightnessFactor`
+  * `LabelStyleTextSize`
+  * `LabelStyleTextColor`
+  * `LabelStyleTextOpacity`
+  * `LabelStyleHaloOpacity`
+  * `LabelStyleHaloWidth`
+  * `LabelStyleHaloBlur`
+  * `LabelStyleBearing`
+  * `BadgeVisibile`
+  * `BadgeZoomFrom`
+  * `BadgeZoomTo`
+  * `BadgeRadius`
+  * `BadgeStrokeWidth`
+  * `BadgeStrokeColor`
+  * `BadgeFillColor`
+  * `BadgePosition`
+* Added functionality to hide specific features from the map
+  * `setHiddenFeatures` set a list of `MPFeatureType` to be hidden from the map
+  * `getHiddenFeatures` get a list of currently hidden `MPFeatureType`
+* Added optional venue loading, use loadMapsIndoorsWithVenues(key, venueIds) to load a specific set of venues
+  * Venues can be added and removed from load at any time by using `addVenueToSync(venueId)` and `removeVenueToSync(venueId)`
+  * Track the status of venues by adding a listener with `addOnVenueStatusChangedListener(MPVenueStatusListener)`
+  * Get a list of synced venues with `getSyncedVenues()`
+* Added functionality to disable automatic floor and building selection when moving the map
+  * `setBuildingSelectionMode` set a Selection mode for Buildings on the map with `MPSelectionMode` (`automatic` or `manual`)
+  * `setFloorSelectionMode` set a Selection mode for Floors on the map with `MPSelectionMode` (`automatic` or `manual`)
+* Added functionality to make locations `selectable`.
+  * This setting can be found on `MPLoction`, `MPPOIType` and `MPSolutionConfig`
+  * Added `MPPOIType` which can be fetched from `MPSolution`
+* Added `mapsIndoorsTransitionLevel` to MapsIndoorsWidget ctor
+  * Sets the zoom level at which the MapsIndoors data should show, instead of extruded buildings on Mapbox Maps. Can be set to 0, if extruded buildings should not show.
+* Added multi-stop navigation: It is now possible to add multiple stops to routes.
+  * The existing `getRoute` method gets two optional parameters `stops` and `optimize`
+  * `stops` will add the stops to the route between the `origin` and `destination`
+  * `optimize` will rearrange the `stops` to make a more optimal route, but `origin` and `destination` will stay the same.
+* Updated Mapsindoors SDKs:
+  * Android to 4.8.5
+  * iOS to 4.5.7
+
+### Deprecated
+
+* Deprecated `clearWayType`: use `clearAvoidWayType` instead
+
+
 ## 2.1.6
 
 * Updated to Mapsindoors iOS SDK 4.3.11 with proper Privacy Manifests

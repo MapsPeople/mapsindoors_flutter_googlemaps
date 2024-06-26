@@ -1,6 +1,6 @@
 name: mapsindoors_googlemaps
 description: A MapsIndoors flutter plugin using the Mapbox platform for Android and iOS app usage.
-version: 2.1.6
+version: 3.0.0
 repository: https://github.com/MapsPeople/mapsindoors_flutter_googlemaps
 homepage: https://www.mapsindoors.com/
 
@@ -19,13 +19,20 @@ flutter:
 dependencies:
   flutter:
     sdk: flutter
-  mapsindoors_googlemaps_android: ^2.1.6
-  mapsindoors_googlemaps_ios: ^2.1.6
-  mapsindoors_platform_interface: ^2.1.6
+  mapsindoors_googlemaps_android: ^3.0.0
+  mapsindoors_googlemaps_ios: ^3.0.0
+  mapsindoors_platform_interface: ^3.0.0
+dependency_overrides:
+  mapsindoors_googlemaps_android:
+    path: ../mapsindoors_googlemaps_android
+  mapsindoors_googlemaps_ios:
+    path: ../mapsindoors_googlemaps_ios
+  mapsindoors_platform_interface:
+    path: ../../misdkfl-platform
+
 
 dev_dependencies:
-  flutter_lints: ^3.0.1
+  flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
   plugin_platform_interface: ^2.0.0
-  
