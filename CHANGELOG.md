@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.1
+
+* Fixed build issue that caused Android devices to be unable to use the SDK
+
 ## 3.0.0
 
 ### Added

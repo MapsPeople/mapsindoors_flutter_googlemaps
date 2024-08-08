@@ -156,6 +156,10 @@ class _MapState extends State<Map> {
     // we just want to see the top 30 results, as not to be overwhelmed
     MPFilter filter = (MPFilterBuilder()..setTake(30)).build();
 
+    // get the scaffold to show a snackbar if the search fails, this is neccessary as the linter will complain if the scaffold is built in catchError
+    // see https://dart.dev/tools/linter-rules/use_build_context_synchronously
+    final scaffold = ScaffoldMessenger.of(context);
+
     // fetch all (max 30) locations that match the query
     getLocationsByQuery(query: query, filter: filter).then((locations) {
       if (locations != null && locations.isNotEmpty) {
@@ -169,7 +173,8 @@ class _MapState extends State<Map> {
       }
     }).catchError((err) {
       // handle the error, for now just show a snackbar
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      if (mounted) return;
+      scaffold.showSnackBar(SnackBar(
         content: Text("Search failed: $err"),
         backgroundColor: Colors.red,
       ));

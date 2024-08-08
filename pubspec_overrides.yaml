@@ -1,0 +1,7 @@
+dependency_overrides:
+  mapsindoors_googlemaps_android:
+    path: ../mapsindoors_googlemaps_android
+  mapsindoors_googlemaps_ios:
+    path: ../mapsindoors_googlemaps_ios
+  mapsindoors_platform_interface:
+    path: ../../misdkfl-platform

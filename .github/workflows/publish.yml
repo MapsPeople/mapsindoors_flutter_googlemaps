@@ -7,8 +7,13 @@ on:
 
 jobs:
   publish:
-    permissions:
-      id-token: write # Required for authentication using OIDC
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
-    # with:
-    #   working-directory: path/to/package/within/repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Publish
+        uses: sakebook/actions-flutter-pub-publisher@v1.4.1
+        with:
+          credential: ${{ secrets.PUB_CREDENTIALS }}
+          skip_test: true
+          dry_run: true
