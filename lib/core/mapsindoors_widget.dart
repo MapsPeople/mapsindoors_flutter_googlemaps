@@ -371,6 +371,11 @@ class MapsIndoorsWidget extends UniqueWidget {
   Future<List<MPFeatureType>> getHiddenFeatures() {
     return MapcontrolPlatform.instance.getHiddenFeatures();
   }
+
+  /// Renders the positioning blue dot at the last known user position on the map
+  Future<void> setShowCompassOnRotate(bool show) {
+    return MapcontrolPlatform.instance.showCompassOnRotate(show);
+  }
 }
 
 class _MapsIndoorsState extends State<MapsIndoorsWidget> {
