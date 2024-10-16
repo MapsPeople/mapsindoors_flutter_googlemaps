@@ -1,8 +1,22 @@
 # Changelog
 
+## 3.1.1
+
+### Fixed
+
+* Fixed issue where camera events would not be propagated to the Flutter layer
+* Fixed issue on iOS where setting a floor selector
+* Fixed issue on Android where goTo MPLocation did not function properly
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to 4.8.11
+  * iOS to 4.6.1
+
 ## 3.1.0
 
-### Addded
+### Added
 
 * Added functionality for Android to update the map whenever a Display Rule is changed
 * Added method on MapsIndoorsWidget to disable built-in compass

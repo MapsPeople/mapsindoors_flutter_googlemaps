@@ -31,6 +31,16 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+dependency_overrides:
+  # The following overrides are needed for development against local module versions.
+  mapsindoors_googlemaps_android:
+    path: ../../mapsindoors_googlemaps_android
+  mapsindoors_googlemaps_ios:
+    path: ../../mapsindoors_googlemaps_ios
+  mapsindoors_platform_interface:
+    path: ../../../misdkfl-platform
+
+
 dev_dependencies:
   integration_test:
     sdk: flutter

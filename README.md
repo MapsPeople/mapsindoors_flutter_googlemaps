@@ -69,10 +69,6 @@ To get the underlying Google Map to function, you need to perform the following 
 2. Navigate to `iOS/Runner/Info.plist`.
 3. Add a new key named "GoogleMapsAPIKey" with your Google Maps API key as content.
 
-#### Adding MapsIndoors script specific to Google Maps, to Podfile
-
-After this you should navigate into the iOS folder of your flutter project and add this script to the applications Podfile: [MapsIndoors podfile Post install](https://github.com/MapsPeople/MapsIndoors-SDK-iOS/wiki/Podfile-post_install-v4)
-
 ## Usage
 
 This section has examples of code for the following tasks:
