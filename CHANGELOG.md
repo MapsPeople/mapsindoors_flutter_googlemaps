@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.1.3
+
+### Fixed
+
+* Fixed custom floorselectors not working properly on iOS
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to 4.8.12
+  * iOS to 4.6.2
+
 ## 3.1.2
 
 ### Fixed

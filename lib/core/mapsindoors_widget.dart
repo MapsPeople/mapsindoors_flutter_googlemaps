@@ -405,7 +405,11 @@ class _MapsIndoorsState extends State<MapsIndoorsWidget> {
     };
 
     final floorSelector = widget.floorSelector ?? MPDefaultFloorSelector();
-    MapcontrolPlatform.instance.setFloorSelector(floorSelector, true);
+    if (Platform.isAndroid) {
+      MapcontrolPlatform.instance.setFloorSelector(floorSelector, true);
+    } else if (Platform.isIOS) {
+      MapcontrolPlatform.instance.setFloorSelector(floorSelector, false);
+    }
     final StatefulWidget ret;
 
     if (Platform.isAndroid) {
