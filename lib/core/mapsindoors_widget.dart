@@ -15,6 +15,7 @@ class MapsIndoorsWidget extends UniqueWidget {
   final Alignment? floorSelectorAlignment;
   final bool useDefaultMapsIndoorsStyle;
   final OnMapReadyListener? readyListener;
+  final MPCameraPosition? initialCameraPosition;
 
   /// Build the widget, MapsIndoors currently supports the following platforms:
   /// * Android
@@ -36,6 +37,7 @@ class MapsIndoorsWidget extends UniqueWidget {
     this.floorSelector,
     this.floorSelectorAlignment,
     this.readyListener,
+    this.initialCameraPosition,
     this.useDefaultMapsIndoorsStyle = true,
   }) : super(key: const GlobalObjectKey(MapsIndoorsWidget)) {
     if (readyListener != null) {
@@ -350,7 +352,7 @@ class MapsIndoorsWidget extends UniqueWidget {
   ///
   /// If any value is null, the corresponding field will not be updated.
   Future<void> setLabelOptions(
-      {num? textSize, String? color, bool showHalo = false}) {
+      {num? textSize, Color? color, bool showHalo = false}) {
     return MapcontrolPlatform.instance
         .setLabelOptions(textSize, color, showHalo);
   }
@@ -401,7 +403,9 @@ class _MapsIndoorsState extends State<MapsIndoorsWidget> {
         "useDefaultMapsIndoorsStyle": widget.useDefaultMapsIndoorsStyle,
       }),
       "floorSelectorAutoFloorChange":
-          widget.floorSelector?.isAutoFloorChangeEnabled == true
+          widget.floorSelector?.isAutoFloorChangeEnabled == true,
+      "initialCameraPosition":
+          jsonEncode(widget.initialCameraPosition?.toJson()),
     };
 
     final floorSelector = widget.floorSelector ?? MPDefaultFloorSelector();

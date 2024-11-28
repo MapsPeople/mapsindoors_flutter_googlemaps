@@ -2,7 +2,7 @@ part of '../mapsindoors.dart';
 
 class MPMapLabelFont {
   final String typeface;
-  final String color;
+  final Color color;
   final bool showHalo;
   const MPMapLabelFont({
     required this.typeface,

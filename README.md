@@ -21,7 +21,7 @@ This plugin is based on the MapsIndoors V4 SDK for Android and iOS.
 Add MapsIndoors to your `pubspec.yaml`.
 ​
 ```yaml
-mapsindoors_googlemaps: ^3.0.0
+mapsindoors_googlemaps: ^4.0.0
 ```
 
 ### Android
@@ -132,6 +132,8 @@ class MapWidgetState extends State<MapWidget> {
                 child: _mapController = MapsIndoorsWidget(
                     // build with the default floor selector, this is optional.
                     floorSelector: _floorSelectorWidget,
+                    // set an optional starting location for the camera, this starts the camera above Los Angeles
+                    initialCameraPosition: MPCameraPosition(zoom: 7, MPPoint.withCoordinates(longitude: -118.0165, latitude: 33.9457))
                     readyListener: _mapControlReadyListener,
                 ),
             ),
@@ -218,7 +220,7 @@ The `hideLocationsByDefault()` method hides all markers that are not explicitly 
 
 The `showLocationsByDefault()` method ensures all markers are shown by setting the main display rule to visible.
 
-The `changeTypePolygonColor(String type, String color)` method changes the fill color for all polygons belonging to a specific type. It gets the display rule for the specified type using `getDisplayRuleByName`, and sets the fill color using `setPolygonFillColor`.
+The `changeTypePolygonColor(String type, Color color)` method changes the fill color for all polygons belonging to a specific type. It gets the display rule for the specified type using `getDisplayRuleByName`, and sets the fill color using `setPolygonFillColor`.
 
 These methods can all be used to customize the display of markers and polygons on the map.
 
@@ -238,8 +240,7 @@ void showLocationsByDefault() async {
 }
 ​
 /// This method changes the fill color for all polygons belonging to a specific [type]
-/// the [color] MUST be a valid hex color string.
-void changeTypePolygonColor(String type, String color) async {
+void changeTypePolygonColor(String type, Color color) async {
     final MPDisplayRule? rule = await getDisplayRuleByName(type);
     rule?.setPolygonFillColor(color);
 }

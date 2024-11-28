@@ -33,7 +33,7 @@ class MPDirectionsRenderer {
           .setAnimatedPolyline(animated, repeating, durationMs);
 
   /// Set the colors of the polyline
-  Future<void> setPolyLineColors(String foreground, String background) =>
+  Future<void> setPolyLineColors(Color foreground, Color background) =>
       DirectionsRendererPlatform.instance
           .setPolyLineColors(foreground, background);
 

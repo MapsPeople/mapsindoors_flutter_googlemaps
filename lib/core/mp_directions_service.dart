@@ -32,11 +32,6 @@ class MPDirectionsService {
       DirectionsServicePlatform.instance.addExcludeWayType(avoidWayType);
 
   /// Clears all added avoidWayTypes
-  @Deprecated("Deprecated since 4.3.0. Use clearAvoidWayType() instead")
-  Future<void> clearWayType() =>
-      DirectionsServicePlatform.instance.clearAvoidWayType();
-
-  /// Clears all added avoidWayTypes
   Future<void> clearAvoidWayType() =>
       DirectionsServicePlatform.instance.clearAvoidWayType();
 

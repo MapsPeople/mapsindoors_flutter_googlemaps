@@ -1,5 +1,25 @@
 # Changelog
 
+## 4.0.0
+
+See the [migration guide](https://docs.mapsindoors.com/sdks-and-frameworks/flutter/migration-guide).
+
+### Added
+
+* Added `initialCameraPosition: MPCameraPosition` to the `MapWidget` constructor. If set, the initial position of the camera will be moved to the given `MPCameraPosition`.
+
+### Changed
+
+* Changed all uses of color `Strings` to use `dart:ui` `Color` instead.
+* Updated Mapsindoors SDKs:
+  * Android to 4.9.0
+  * iOS to 4.7.0
+
+### Removed
+
+ * `DirectionsService` `ClearWayType` has been removed, use `ClearAvoidWayType` instead.
+
+
 ## 3.1.3
 
 ### Fixed
