@@ -1,5 +1,17 @@
 # Changelog
 
+## 4.0.1
+
+### Fixed
+
+* Improved rendering performance of Mapbox Map view especially when pinch zooming.
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * iOS to 4.8.0
+
+
 ## 4.0.0
 
 See the [migration guide](https://docs.mapsindoors.com/sdks-and-frameworks/flutter/migration-guide).
