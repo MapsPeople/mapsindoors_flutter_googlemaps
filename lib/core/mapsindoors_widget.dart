@@ -414,17 +414,35 @@ class _MapsIndoorsState extends State<MapsIndoorsWidget> {
     } else if (Platform.isIOS) {
       MapcontrolPlatform.instance.setFloorSelector(floorSelector, false);
     }
-    final StatefulWidget ret;
+    final StatefulWidget miView;
 
     if (Platform.isAndroid) {
-      ret = AndroidView(
+      miView = PlatformViewLink(
         viewType: viewType,
-        layoutDirection: TextDirection.ltr,
-        creationParams: creationParams,
-        creationParamsCodec: const StandardMessageCodec(),
+        surfaceFactory: (context, controller) {
+          return AndroidViewSurface(
+            controller: controller as AndroidViewController,
+            gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
+            hitTestBehavior: PlatformViewHitTestBehavior.opaque,
+          );
+        },
+        onCreatePlatformView: (params) {
+          return PlatformViewsService.initSurfaceAndroidView(
+            id: params.id,
+            viewType: viewType,
+            layoutDirection: TextDirection.ltr,
+            creationParams: creationParams,
+            creationParamsCodec: const StandardMessageCodec(),
+            onFocus: () {
+              params.onFocusChanged(true);
+            },
+          )
+            ..addOnPlatformViewCreatedListener(params.onPlatformViewCreated)
+            ..create();
+        },
       );
     } else if (Platform.isIOS) {
-      ret = UiKitView(
+      miView = UiKitView(
         viewType: viewType,
         layoutDirection: TextDirection.ltr,
         creationParams: creationParams,
@@ -438,7 +456,7 @@ class _MapsIndoorsState extends State<MapsIndoorsWidget> {
       fit: FlexFit.tight,
       flex: 1,
       child: Stack(children: [
-        ret,
+        miView,
         Align(
           alignment: widget.floorSelectorAlignment ?? Alignment.centerRight,
           child: floorSelector,

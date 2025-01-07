@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.2
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to 4.9.1
+  * iOS to 4.8.1
+
 ## 4.0.1
 
 ### Fixed
