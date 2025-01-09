@@ -16,12 +16,15 @@ class MapsIndoorsWidget extends UniqueWidget {
   final bool useDefaultMapsIndoorsStyle;
   final OnMapReadyListener? readyListener;
   final MPCameraPosition? initialCameraPosition;
+  final String? mapStyleUri;
 
   /// Build the widget, MapsIndoors currently supports the following platforms:
   /// * Android
   /// * iOS
   ///
   /// Has optional [MPFloorSelector] widget. Package includes a [MPDefaultFloorSelector].
+  ///
+  /// [mapStyleUri] When using Mapbox this can be set to use a custom Mapbox style. this setting is ignored if [useDefaultMapsIndoorsStyle] is not disabled.
   ///
   /// [floorSelectorAlignment] defaults to [Alignment.centerRight] if none is provided.
   MapsIndoorsWidget({
@@ -39,6 +42,7 @@ class MapsIndoorsWidget extends UniqueWidget {
     this.readyListener,
     this.initialCameraPosition,
     this.useDefaultMapsIndoorsStyle = true,
+    this.mapStyleUri,
   }) : super(key: const GlobalObjectKey(MapsIndoorsWidget)) {
     if (readyListener != null) {
       MapcontrolPlatform.instance.setOnMapControlReadyListener(readyListener!);
@@ -401,6 +405,7 @@ class _MapsIndoorsState extends State<MapsIndoorsWidget> {
         "tileFadeInEnabled": widget.enabletileFadeIn,
         "mapsindoorsTransitionLevel": widget.mapsIndoorsTransitionLevel,
         "useDefaultMapsIndoorsStyle": widget.useDefaultMapsIndoorsStyle,
+        "mapStyleUri": widget.mapStyleUri,
       }),
       "floorSelectorAutoFloorChange":
           widget.floorSelector?.isAutoFloorChangeEnabled == true,

@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.1.0
+
+### Fixed
+
+* Fixed error when parsing `MPRoute` objects
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * iOS to 4.8.3
+
 ## 4.0.2
 
 ### Changed
