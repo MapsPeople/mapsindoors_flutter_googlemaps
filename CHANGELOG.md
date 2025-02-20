@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.1.3
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * iOS to 4.9.4
+
 ## 4.1.2
 
 ### Changed
