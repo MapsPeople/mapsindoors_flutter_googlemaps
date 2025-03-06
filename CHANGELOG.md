@@ -1,5 +1,17 @@
 # Changelog
 
+## 4.1.4
+
+### Fixed
+
+* Removed a number of potential memory retentions in the iOS part of the Flutter plugin.
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to 4.11.2
+  * iOS to 4.9.5
+
 ## 4.1.3
 
 ### Changed
