@@ -1,10 +1,17 @@
 # Changelog
 
+## 4.1.5
+
+### Fixed
+
+* `zoomLevelChanged` callback for custom floor selectors now gets called on iOS as well.
+
 ## 4.1.4
 
 ### Fixed
 
 * Removed a number of potential memory retentions in the iOS part of the Flutter plugin.
+* Restored functionality of the listeners on iOS that were disabled in version 4.1.3.
 
 ### Changed
 
