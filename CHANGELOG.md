@@ -1,5 +1,17 @@
 # Changelog
 
+## 4.1.6
+
+### Fixed
+
+* Made `getLocations()` return the same result on both Android and iOS.
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to 4.11.3
+  * iOS to 4.9.6
+
 ## 4.1.5
 
 ### Fixed
