@@ -1,5 +1,29 @@
 # Changelog
 
+## 4.2.0
+
+### Added
+
+* Support for positioning labels in more places by having `labelStylePosition` added to DisplayRules. With this attribute it is possible to decide where the label is placed in relation to the icon. Possible values are defined in `MPLabelPosition` as `right`, `left`, `top` and `bottom`. The label positioning can now be set in the MapsIndoors CMS.
+
+### Added
+
+* Added support for LabelPositioning on DisplayRules
+
+### Fixed
+
+* Added additional guards against the map being used before it is ready (Android)
+* Fixed issue causing compass to persist even when disabled (Android)
+* getLocationsByExternalIds now can return more than a single Location in the list (as would be expected) (iOS)
+* Fixed issue where some routes would be incorrect if the route was calculated while offline
+* Fixed issue where moving beyond the venue could cause a crash due to the floor selector
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to 4.12.0
+  * iOS to 4.11.0
+
 ## 4.1.6
 
 ### Fixed

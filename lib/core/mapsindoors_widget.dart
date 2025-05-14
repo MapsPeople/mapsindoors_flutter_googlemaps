@@ -378,7 +378,11 @@ class MapsIndoorsWidget extends UniqueWidget {
     return MapcontrolPlatform.instance.getHiddenFeatures();
   }
 
-  /// Renders the positioning blue dot at the last known user position on the map
+  /// Set the visibility of the compass on the map
+  ///
+  /// [show] true to show the compass when rotating the screen away from north, false to hide it
+  ///
+  /// The compass is shown by default
   Future<void> setShowCompassOnRotate(bool show) {
     return MapcontrolPlatform.instance.showCompassOnRotate(show);
   }
