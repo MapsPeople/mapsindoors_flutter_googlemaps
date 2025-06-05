@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.2.1
+
+### Fixed
+
+* Fixed Android not respecting setHiddenFeatures for 3D models
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to 4.12.1
+
 ## 4.2.0
 
 ### Added
