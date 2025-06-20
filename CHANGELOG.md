@@ -1,5 +1,17 @@
 # Changelog
 
+## 4.2.2
+
+### Fixed
+
+* Fixed iOS not respecting setHiddenFeatures for 3D models
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to 4.12.3
+  * iOS to 4.12.1
+
 ## 4.2.1
 
 ### Fixed
