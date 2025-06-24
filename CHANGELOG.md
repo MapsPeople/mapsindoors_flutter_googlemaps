@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.2.3
+
+### Fixed
+
+* Fixed iOS compilation error
+
 ## 4.2.2
 
 ### Fixed
