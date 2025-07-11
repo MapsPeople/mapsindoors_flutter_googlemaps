@@ -1,5 +1,22 @@
 # Changelog
 
+## 4.2.4
+
+### Added
+
+* Added possibility to define which map features to show when initializing the MapsIndoors widget
+
+### Fixed
+
+* `zoomBy` on iOS now actually zooms by the given amount from the current zoom level
+* `zoom` level reported by Android when using Mapbox to not be off by 1
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to [4.12.4](https://docs.mapsindoors.com/other/changelog/android-sdk/v4#id-4.12.4-2025-07-11)
+  * iOS to [4.12.2](https://docs.mapsindoors.com/other/changelog/ios-sdk/v4#id-4.12.2-2025-07-09)
+
 ## 4.2.3
 
 ### Fixed
