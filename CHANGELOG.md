@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.2.5
+
+### Fixed
+
+* Resolved cocoapods dependency issue
+
 ## 4.2.4
 
 ### Added
