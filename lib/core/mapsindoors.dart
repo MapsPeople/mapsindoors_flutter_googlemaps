@@ -224,3 +224,7 @@ Future<MPGeocodeResult?> reverseGeoCode(MPPoint point) =>
 /// Gets the default venue for this solution
 Future<MPVenue?> getDefaultVenue() =>
     MapsindoorsPlatform.instance.getDefaultVenue();
+
+/// Enables or disables debug logging for the MapsIndoors SDK.
+Future<void> enableMapsIndoorsDebugLogging(bool enable) =>
+    MapsindoorsPlatform.instance.enableDebugLogging(enable);

@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.3.0
+
+### Added
+
+* Added `enableMapsIndoorsDebugLogging(bool)` function to enable SDK logging to help with debugging.
+
 ## 4.2.5
 
 ### Fixed
