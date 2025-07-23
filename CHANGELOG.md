@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.3.1
+
+### Fixed
+
+* Fixed build issues for iOS.
+
 ## 4.3.0
 
 ### Added
