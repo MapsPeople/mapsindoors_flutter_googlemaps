@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.3.2
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to [4.12.4](https://docs.mapsindoors.com/other/changelog/android-sdk/v4#id-4.12.5-2025-07-24)
+
 ## 4.3.1
 
 ### Fixed
