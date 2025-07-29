@@ -63,12 +63,19 @@ Future<MPDisplayRule?> getDisplayRuleByLocation(
 ///
 /// Requires that [loadMapsIndoors] has successfully executed.
 Future<MPDisplayRule?> getDisplayRuleByName(String name) async {
-  final exists = await MapsindoorsPlatform.instance.displayRuleNameExists(name);
-  if (exists == true) {
+  final typeExists =
+      await MapsindoorsPlatform.instance.displayRuleNameExists(name);
+
+  if (typeExists == true) {
     return MapsindoorsPlatform.instance.createDisplayRuleWithName(name);
-  } else {
-    return null;
   }
+
+  final location = await getLocationById(name);
+  if (location != null) {
+    return getDisplayRuleByLocation(location);
+  }
+
+  return null;
 }
 
 /// Retrieve the corresponding display rule for the given [MPSolutionDisplayRuleEnum].

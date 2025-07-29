@@ -1,5 +1,20 @@
 # Changelog
 
+## 4.4.0
+
+### Fixed
+
+* Fixed a number of Typos
+* Fixed an issue where attempting to fetch display rules by name using location ids not working on iOS
+* Fixed an issue where setting a duration on a `CameraUpdate` would be ignored on iOS
+* Fixed an issue where setting a zoom value on a `CameraUpdate` would sometimes be ignored on iOS
+* Fixed a native crash on Android by updating the underlying Mapbox Maps version
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to [4.13.0](https://docs.mapsindoors.com/other/changelog/android-sdk/v4#id-4.13.0-2025-07-29)
+
 ## 4.3.2
 
 ### Changed
