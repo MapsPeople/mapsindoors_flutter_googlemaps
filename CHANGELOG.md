@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.4.1
+
+### Fixed
+
+* Fixed issues with using `zoomTo` and `zoomBy` camera updates on iOS.
+* Fixed issue with `fromBounds` camera update not adjusting the zoom level correctly.
+* Fixed issue with set `hiddenFeatures` not being respected on iOS.
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * iOS to [4.13.0](https://docs.mapsindoors.com/other/changelog/ios-sdk/v4#id-4.13.0-2025-08-01)
+
 ## 4.4.0
 
 ### Fixed
