@@ -174,8 +174,8 @@ class MapsIndoorsWidget extends UniqueWidget {
   ///
   /// Examples of classes of type [MPEntity] are: [MPVenue], [MPBuilding],
   /// [MPBuilding], [MPLocation].
-  Future<void> goTo(FutureOr<MPEntity?> entity) async {
-    return MapcontrolPlatform.instance.goTo(await entity);
+  Future<void> goTo(FutureOr<MPEntity?> entity, [double? maxZoom]) async {
+    return MapcontrolPlatform.instance.goTo(await entity, maxZoom);
   }
 
   /// Selects a location based on a [MPLocation] object.

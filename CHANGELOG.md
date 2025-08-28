@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.5.0
+
+### Added
+
+* Added support for `automatedZoomLevel` property in `MPSolutionConfig` to limit the zoom level when using e.g. the `goTo(entity:)` method.
+* Added `goTo(entity:maxZoom:)` method to allow for limiting the zoom level manually instead of using `automatedZoomLevel`.
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to [4.14.1](https://docs.mapsindoors.com/other/changelog/android-sdk/v4#id-4.14.1-2025-08-28)
+  * iOS to [4.13.2](https://docs.mapsindoors.com/other/changelog/ios-sdk/v4#id-4.13.2-2025-08-06)
+
 ## 4.4.1
 
 ### Fixed
@@ -332,7 +345,7 @@ See the [migration guide](https://docs.mapsindoors.com/sdks-and-frameworks/flutt
   * `setBuildingSelectionMode` set a Selection mode for Buildings on the map with `MPSelectionMode` (`automatic` or `manual`)
   * `setFloorSelectionMode` set a Selection mode for Floors on the map with `MPSelectionMode` (`automatic` or `manual`)
 * Added functionality to make locations `selectable`.
-  * This setting can be found on `MPLoction`, `MPPOIType` and `MPSolutionConfig`
+  * This setting can be found on `MPLocation`, `MPPOIType` and `MPSolutionConfig`
   * Added `MPPOIType` which can be fetched from `MPSolution`
 * Added `mapsIndoorsTransitionLevel` to MapsIndoorsWidget ctor
   * Sets the zoom level at which the MapsIndoors data should show, instead of extruded buildings on Mapbox Maps. Can be set to 0, if extruded buildings should not show.
