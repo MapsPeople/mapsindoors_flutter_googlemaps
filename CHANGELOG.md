@@ -1,11 +1,25 @@
 # Changelog
 
+## 4.5.1
+
+### Fixed
+
+* Inconsistencies in color values across Android and iOS are gone
+* Avoid crashes when accessing a number of properties due to null values
+* The callback for `onLegSelected` in the `onLegSelectedListener` is now called on iOS
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to [4.15.2](https://docs.mapsindoors.com/other/changelog/android-sdk/v4#id-4.15.2-2025-09-22), making Android 16 kB page size compatible (Google Play requirement from November 1)
+  * iOS to [4.14.0](https://docs.mapsindoors.com/other/changelog/ios-sdk/v4#id-4.14.0-2025-09-16)
+
 ## 4.5.0
 
 ### Added
 
-* Added support for `automatedZoomLevel` property in `MPSolutionConfig` to limit the zoom level when using e.g. the `goTo(entity:)` method.
-* Added `goTo(entity:maxZoom:)` method to allow for limiting the zoom level manually instead of using `automatedZoomLevel`.
+* Added support for `automatedZoomLevel` property in `MPSolutionConfig` to limit the zoom level when using e.g. the `goTo(entity:)` method
+* Added `goTo(entity:maxZoom:)` method to allow for limiting the zoom level manually instead of using `automatedZoomLevel`
 
 ### Changed
 
