@@ -1,5 +1,22 @@
 # Changelog
 
+## 4.6.0
+
+### Added
+
+* Added support for [Additional Details](https://docs.mapsindoors.com/products/cms/additional-location-details)
+* Added support for [Nested Categories](https://docs.mapsindoors.com/products/cms/categories#subcategories)
+
+### Fixed
+
+* Fixed a number of build issues on both Android and iOS
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to [4.15.5](https://docs.mapsindoors.com/other/changelog/android-sdk/v4#id-4.15.5-2025-10-15)
+  * iOS to [4.15.2](https://docs.mapsindoors.com/other/changelog/ios-sdk/v4)
+
 ## 4.5.1
 
 ### Fixed
