@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.6.1
+
+### Fixed
+
+* Added proguard consumer rules that should help avoid issues when minifying the SDK
+* Fixed issues with parsing Additional Details on iOS devices.
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to [4.16.0](https://docs.mapsindoors.com/other/changelog/android-sdk/v4#id-4.16.0-2025-11-21)
+  * iOS to [4.15.6](https://docs.mapsindoors.com/other/changelog/ios-sdk/v4#id-4.15.6-2025-11-18)
+
 ## 4.6.0
 
 ### Added
@@ -15,7 +28,7 @@
 
 * Updated Mapsindoors SDKs:
   * Android to [4.15.5](https://docs.mapsindoors.com/other/changelog/android-sdk/v4#id-4.15.5-2025-10-15)
-  * iOS to [4.15.2](https://docs.mapsindoors.com/other/changelog/ios-sdk/v4)
+  * iOS to [4.15.2](https://docs.mapsindoors.com/other/changelog/ios-sdk/v4#id-4.15.2-to-4.15.5-2025-10-15-to-2025-10-31)
 
 ## 4.5.1
 
