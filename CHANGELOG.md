@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.6.3
+
+### Fixed
+
+* The function `addVenuesToSync` no longer causes a crash on iOS.
+* The function `getLocationsByQuery` no longer uses excessive amounts of memory on Android.
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to [4.16.2](https://docs.mapsindoors.com/other/changelog/android-sdk/v4#id-4.16.2)
+  * iOS to [4.16.1](https://docs.mapsindoors.com/other/changelog/ios-sdk/v4#id-4.16.1)
+
 ## 4.6.2
 
 ### Changed
