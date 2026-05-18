@@ -21,7 +21,7 @@ This plugin is based on the MapsIndoors V4 SDK for Android and iOS.
 Add MapsIndoors to your `pubspec.yaml`.
 ​
 ```yaml
-mapsindoors_googlemaps: ^4.6.2
+mapsindoors_googlemaps: ^4.7.0
 ```
 
 ### Android
