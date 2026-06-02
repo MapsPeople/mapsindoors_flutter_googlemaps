@@ -24,3 +24,4 @@ jobs:
           credentialJson: ${{ secrets.PUB_CREDENTIALS }}
           flutter: true
           skipTests: true
+          force: true

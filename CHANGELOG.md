@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.7.1
+
+### Fixed
+
+* Fixed issue on Android where floorselector actions returned from the SDK would not always run on the main thread, resulting in a crash
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * Android to [4.18.3](https://docs.mapsindoors.com/other/changelog/android-sdk/v4#id-4.18.3)
+
 ## 4.7.0
 
 ### Changed
