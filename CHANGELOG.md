@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.7.3
+
+### Changed
+
+* Updated Mapsindoors SDKs:
+  * iOS to [4.17.3](https://docs.mapsindoors.com/other/changelog/ios-sdk/v4#id-4.17.3)
+
 ## 4.7.2
 
 ### Changed
